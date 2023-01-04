@@ -10,6 +10,11 @@ export default {
       title: 'Title'
     },
     {
+      name: 'hostname',
+      type: 'string',
+      title: 'Hostname'
+    },
+    {
       name: 'image',
       type: 'mainImage',
       title: 'Site Image',
