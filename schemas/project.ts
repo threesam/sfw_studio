@@ -38,28 +38,98 @@ export default {
       type: 'blockContent',
     },
     {
-      name: 'contributors',
+      name: 'cast',
       type: 'array',
-      of: [{
-        name: 'contributor',
-        type: 'reference',
-        title: 'Contributor',
-        to: [{ type: 'contributor' }]
-      }]
+      of: [    
+        {
+          name: 'contributor',
+          type: 'object',
+          fields: [
+            {
+              name: 'castname',
+              title: 'Cast Name',
+              type: 'string',
+            },
+            {
+              name: 'person',
+              type: 'reference',
+              title: 'Person',
+              to: [{ type: 'person' }]
+            }
+          ],
+
+          preview: {
+            select: {
+              castName: 'castname',
+              personName: 'person.name',
+              media: 'person.mainImage'
+            },
+            prepare(selection) {
+              const { castName, personName, media } = selection
+        
+              return Object.assign({}, selection, {
+                title: castName,
+                subtitle: personName,
+                media
+              })
+            },
+          },
+        }
+      ]
+    },
+    {
+      name: 'crew',
+      type: 'array',
+      of: [    
+        {
+          name: 'contributor',
+          type: 'object',
+          fields: [
+            {
+              name: 'role',
+              type: 'reference',
+              title: 'Role',
+              to: [{ type: 'role' }],
+            },
+            {
+              name: 'person',
+              type: 'reference',
+              title: 'Person',
+              to: [{ type: 'person' }]
+            }
+          ],
+
+          preview: {
+            select: {
+              role: 'role.title',
+              personName: 'person.name',
+              media: 'person.mainImage'
+            },
+            prepare(selection) {
+              const { role, personName, media } = selection
+        
+              return Object.assign({}, selection, {
+                title: role,
+                subtitle: personName,
+                media
+              })
+            },
+          },
+        }
+      ]
     }
   ],
 
   preview: {
     select: {
       title: 'title',
-      author: 'author.name',
       media: 'mainImage',
     },
     prepare(selection) {
-      const { author, media, title } = selection
+      const { media, title } = selection
+
       return Object.assign({}, selection, {
         title,
-        subtitle: author && `by ${author}`,
         media
       })
     },
