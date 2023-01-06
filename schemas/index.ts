@@ -1,6 +1,7 @@
 
 import blockContent from './blockContent'
 import mainImage from './mainImage'
+import link from './link'
 // import category from './category'
 // import post from './post'
 import person from './person'
@@ -16,5 +17,6 @@ export const schemaTypes = [
   person,
   // category,
   blockContent,
-  mainImage
+  mainImage,
+  link
 ]

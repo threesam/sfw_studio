@@ -32,6 +32,17 @@ export default {
       title: 'Link',
       description: 'Only one link please',
       type: 'url'
+    },
+    {
+      name: 'links',
+      type: 'array',
+      title: 'Links',
+      of: [
+        {
+          type: 'link',
+          name: 'link'
+        }
+      ]
     }
   ],
   preview: {

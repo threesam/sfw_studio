@@ -28,6 +28,12 @@ export default {
       type: 'mainImage',
     },
     {
+      name: 'posters',
+      type: 'array',
+      title: 'Posters',
+      of: [{type: 'mainImage'}]
+    },
+    {
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
