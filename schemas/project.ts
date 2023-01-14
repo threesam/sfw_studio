@@ -44,6 +44,17 @@ export default {
       type: 'blockContent',
     },
     {
+      name: 'links',
+      type: 'array',
+      title: 'Links',
+      of: [
+        {
+          type: 'link',
+          name: 'link'
+        }
+      ]
+    },
+    {
       name: 'cast',
       type: 'array',
       of: [    
@@ -61,6 +72,11 @@ export default {
               type: 'reference',
               title: 'Person',
               to: [{ type: 'person' }]
+            },
+            {
+              name: 'release',
+              type: 'image',
+              title: 'Release Form'
             }
           ],
 
