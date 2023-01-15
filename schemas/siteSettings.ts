@@ -27,6 +27,17 @@ export default {
       description: 'Describe this site for search engines and social media.'
     },
     {
+      name: 'links',
+      type: 'array',
+      title: 'Links',
+      of: [
+        {
+          type: 'link',
+          name: 'link'
+        }
+      ]
+    },
+    {
       name: 'icons',
       title: 'Icons',
       type: 'array',
