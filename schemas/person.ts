@@ -18,20 +18,20 @@ export default {
       },
     },
     {
-      name: 'mainImage',
+      name: 'image',
       title: 'Image',
-      type: 'mainImage',
+      type: 'image',
     },
     {
       name: 'bio',
       title: 'Bio',
-      type: 'blockContent'
+      type: 'blockContent',
     },
     {
       name: 'link',
       title: 'Link',
       description: 'Only one link please',
-      type: 'url'
+      type: 'url',
     },
     {
       name: 'links',
@@ -40,10 +40,10 @@ export default {
       of: [
         {
           type: 'link',
-          name: 'link'
-        }
-      ]
-    }
+          name: 'link',
+        },
+      ],
+    },
   ],
   preview: {
     select: {
@@ -51,10 +51,10 @@ export default {
       media: 'mainImage',
     },
     prepare(selection) {
-      const { name, media } = selection
+      const {name, media} = selection
       return Object.assign({}, selection, {
         subtitle: name,
-        media
+        media,
       })
     },
   },

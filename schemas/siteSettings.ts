@@ -7,24 +7,24 @@ export default {
     {
       name: 'title',
       type: 'string',
-      title: 'Title'
+      title: 'Title',
     },
     {
       name: 'hostname',
       type: 'string',
-      title: 'Hostname'
+      title: 'Hostname',
     },
     {
       name: 'image',
-      type: 'mainImage',
+      type: 'image',
       title: 'Site Image',
-      description: 'main branding'
+      description: 'main branding',
     },
     {
       name: 'description',
       type: 'text',
       title: 'Description',
-      description: 'Describe this site for search engines and social media.'
+      description: 'Describe this site for search engines and social media.',
     },
     {
       name: 'links',
@@ -33,24 +33,24 @@ export default {
       of: [
         {
           type: 'link',
-          name: 'link'
-        }
-      ]
+          name: 'link',
+        },
+      ],
     },
     {
       name: 'icons',
       title: 'Icons',
       type: 'array',
-      of: [{
-        type: 'mainImage'
-      }]
-    }
-    // {
-    //   name: 'author',
-    //   type: 'reference',
-    //   description: 'Publish an author and set a reference to them here.',
-    //   title: 'Author',
-    //   to: [{ type: 'author' }]
-    // }
-  ]
+      of: [
+        {
+          type: 'image',
+        },
+      ],
+    },
+    {
+      name: 'body',
+      title: 'About',
+      type: 'blockContent',
+    },
+  ],
 }

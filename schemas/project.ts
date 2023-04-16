@@ -23,15 +23,15 @@ export default {
       type: 'text',
     },
     {
-      name: 'mainImage',
-      title: 'Main image',
-      type: 'mainImage',
+      name: 'image',
+      title: 'Featured Image',
+      type: 'image',
     },
     {
       name: 'posters',
       type: 'array',
       title: 'Posters',
-      of: [{type: 'mainImage'}]
+      of: [{type: 'image'}],
     },
     {
       name: 'publishedAt',
@@ -50,14 +50,14 @@ export default {
       of: [
         {
           type: 'link',
-          name: 'link'
-        }
-      ]
+          name: 'link',
+        },
+      ],
     },
     {
       name: 'cast',
       type: 'array',
-      of: [    
+      of: [
         {
           name: 'contributor',
           type: 'object',
@@ -71,38 +71,38 @@ export default {
               name: 'person',
               type: 'reference',
               title: 'Person',
-              to: [{ type: 'person' }]
+              to: [{type: 'person'}],
             },
             {
               name: 'release',
               type: 'image',
-              title: 'Release Form'
-            }
+              title: 'Release Form',
+            },
           ],
 
           preview: {
             select: {
               castName: 'castname',
               personName: 'person.name',
-              media: 'person.mainImage'
+              media: 'person.mainImage',
             },
             prepare(selection) {
-              const { castName, personName, media } = selection
-        
+              const {castName, personName, media} = selection
+
               return Object.assign({}, selection, {
                 title: castName,
                 subtitle: personName,
-                media
+                media,
               })
             },
           },
-        }
-      ]
+        },
+      ],
     },
     {
       name: 'crew',
       type: 'array',
-      of: [    
+      of: [
         {
           name: 'contributor',
           type: 'object',
@@ -111,35 +111,35 @@ export default {
               name: 'role',
               type: 'reference',
               title: 'Role',
-              to: [{ type: 'role' }],
+              to: [{type: 'role'}],
             },
             {
               name: 'person',
               type: 'reference',
               title: 'Person',
-              to: [{ type: 'person' }]
-            }
+              to: [{type: 'person'}],
+            },
           ],
 
           preview: {
             select: {
               role: 'role.title',
               personName: 'person.name',
-              media: 'person.mainImage'
+              media: 'person.mainImage',
             },
             prepare(selection) {
-              const { role, personName, media } = selection
-        
+              const {role, personName, media} = selection
+
               return Object.assign({}, selection, {
                 title: role,
                 subtitle: personName,
-                media
+                media,
               })
             },
           },
-        }
-      ]
-    }
+        },
+      ],
+    },
   ],
 
   preview: {
@@ -148,11 +148,11 @@ export default {
       media: 'mainImage',
     },
     prepare(selection) {
-      const { media, title } = selection
+      const {media, title} = selection
 
       return Object.assign({}, selection, {
         title,
-        media
+        media,
       })
     },
   },

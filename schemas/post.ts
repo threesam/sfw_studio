@@ -21,23 +21,23 @@ export default {
       name: 'contributor',
       title: 'Contributor',
       type: 'reference',
-      to: { type: 'contributor' },
+      to: {type: 'contributor'},
     },
     {
-      name: 'mainImage',
-      title: 'Main image',
-      type: 'mainImage',
+      name: 'image',
+      title: 'Feature Image',
+      type: 'image',
     },
     {
       name: 'description',
       type: 'text',
-      title: 'Description'
+      title: 'Description',
     },
     {
       name: 'categories',
       title: 'Categories',
       type: 'array',
-      of: [{ type: 'reference', to: { type: 'category' } }],
+      of: [{type: 'reference', to: {type: 'category'}}],
     },
     {
       name: 'publishedAt',
@@ -58,11 +58,11 @@ export default {
       media: 'mainImage',
     },
     prepare(selection) {
-      const { author, media, title } = selection
+      const {author, media, title} = selection
       return Object.assign({}, selection, {
         title,
         subtitle: author && `by ${author}`,
-        media
+        media,
       })
     },
   },

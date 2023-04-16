@@ -20,7 +20,7 @@ export default {
     {
       name: 'productId',
       type: 'number',
-      title: 'Product ID'
+      title: 'Product ID',
     },
     {
       name: 'description',
@@ -28,7 +28,7 @@ export default {
       type: 'text',
     },
     {
-      name: 'mainImage',
+      name: 'image',
       title: 'Main image',
       type: 'image',
       options: {
@@ -38,7 +38,7 @@ export default {
     {
       title: 'Thumbnail Url',
       type: 'url',
-      name: 'thumbnailUrl'
+      name: 'thumbnailUrl',
     },
     {
       name: 'publishedAt',
@@ -56,14 +56,14 @@ export default {
     select: {
       title: 'title',
       author: 'author.name',
-      media: 'mainImage',
+      media: 'image',
     },
     prepare(selection) {
-      const { author, media, title } = selection
+      const {author, media, title} = selection
       return Object.assign({}, selection, {
         title,
         subtitle: author && `by ${author}`,
-        media
+        media,
       })
     },
   },
