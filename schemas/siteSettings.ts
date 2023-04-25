@@ -52,5 +52,16 @@ export default {
       title: 'About',
       type: 'blockContent',
     },
+    {
+      name: 'founders',
+      title: 'Founders',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'person'}],
+        },
+      ],
+    },
   ],
 }

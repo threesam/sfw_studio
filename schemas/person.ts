@@ -48,7 +48,7 @@ export default {
   preview: {
     select: {
       title: 'name',
-      media: 'mainImage',
+      media: 'image',
     },
     prepare(selection) {
       const {name, media} = selection
