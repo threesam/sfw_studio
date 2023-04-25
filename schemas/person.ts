@@ -1,4 +1,6 @@
-export default {
+import {defineType} from 'sanity'
+
+export default defineType({
   name: 'person',
   title: 'Person',
   type: 'document',
@@ -51,11 +53,11 @@ export default {
       media: 'image',
     },
     prepare(selection) {
-      const {name, media} = selection
+      const {title, media} = selection
       return Object.assign({}, selection, {
-        subtitle: name,
+        subtitle: title,
         media,
       })
     },
   },
-}
+})
