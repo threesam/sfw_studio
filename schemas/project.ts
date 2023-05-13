@@ -101,7 +101,7 @@ export default defineType({
             select: {
               castName: 'castname',
               personName: 'person.name',
-              media: 'person.mainImage',
+              media: 'person.image',
             },
             prepare(selection) {
               const {castName, personName, media} = selection
@@ -142,7 +142,7 @@ export default defineType({
             select: {
               role: 'role.title',
               personName: 'person.name',
-              media: 'person.mainImage',
+              media: 'person.image',
             },
             prepare(selection) {
               const {role, personName, media} = selection
@@ -162,7 +162,7 @@ export default defineType({
   preview: {
     select: {
       title: 'title',
-      media: 'mainImage',
+      media: 'image',
     },
     prepare(selection) {
       const {media, title} = selection
