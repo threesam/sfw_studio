@@ -20,6 +20,21 @@ export default defineType({
       },
     },
     {
+      name: 'status',
+      title: 'Status',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'Pre Production', value: 'pre-production'},
+          {title: 'Filming', value: 'filming'},
+          {title: 'Post Production', value: 'post-production'},
+          {title: 'Completed', value: 'completed'},
+          {title: 'Released', value: 'released'},
+        ],
+        layout: 'dropdown',
+      },
+    },
+    {
       name: 'description',
       title: 'Description',
       type: 'text',
