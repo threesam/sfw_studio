@@ -16,19 +16,20 @@ export default {
           {title: 'website', value: 'website'},
           {title: 'imdb', value: 'imdb'},
           {title: 'youtube', value: 'youtube'},
+          {title: 'backstage', value: 'backstage'},
         ],
-        layout: 'dropdown'
-      }
+        layout: 'dropdown',
+      },
     },
     {
       name: 'href',
       title: 'Href',
-      type: 'url'
-    }
+      type: 'url',
+    },
   ],
   preview: {
     select: {
-      title: 'title'
-    }
-  }
+      title: 'title',
+    },
+  },
 }
