@@ -35,6 +35,12 @@ export default defineType({
       },
     },
     {
+      name: 'isFeatured',
+      type: 'boolean',
+      title: 'Is Featured?',
+      description: 'This is temporary until we get pages support',
+    },
+    {
       name: 'description',
       title: 'Description',
       type: 'text',
