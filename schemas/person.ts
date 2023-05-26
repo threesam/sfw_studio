@@ -25,6 +25,11 @@ export default defineType({
       type: 'image',
     },
     {
+      name: 'imageGallery',
+      type: 'array',
+      of: [{type: 'image', name: 'image'}],
+    },
+    {
       name: 'bio',
       title: 'Bio',
       type: 'blockContent',
