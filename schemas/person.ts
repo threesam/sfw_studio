@@ -51,6 +51,10 @@ export default defineType({
         },
       ],
     },
+    {
+      name: 'contact',
+      type: 'string',
+    },
   ],
   preview: {
     select: {
