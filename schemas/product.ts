@@ -7,12 +7,10 @@ export default defineType({
   fields: [
     {
       name: 'title',
-      title: 'Title',
       type: 'string',
     },
     {
-      name: 'slug',
-      title: 'Slug',
+      name: 'handle',
       type: 'slug',
       options: {
         source: 'title',
@@ -20,53 +18,71 @@ export default defineType({
       },
     },
     {
-      name: 'productId',
-      type: 'number',
-      title: 'Product ID',
-    },
-    {
       name: 'description',
-      title: 'Description',
       type: 'text',
     },
     {
-      name: 'image',
-      title: 'Main image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    },
-    {
-      title: 'Thumbnail Url',
       type: 'url',
       name: 'thumbnailUrl',
     },
     {
-      name: 'publishedAt',
-      title: 'Published at',
-      type: 'datetime',
+      name: 'isActive',
+      type: 'boolean',
+      initialValue: false,
     },
     {
-      name: 'body',
-      title: 'Body',
-      type: 'blockContent',
+      name: 'vendor',
+      type: 'string',
+      options: {
+        list: ['printful'],
+      },
+    },
+    {
+      name: 'variants',
+      type: 'array',
+      of: [
+        {
+          name: 'variant',
+          type: 'object',
+          fields: [
+            {
+              name: 'name',
+              type: 'string',
+            },
+            {
+              name: 'price',
+              type: 'number',
+            },
+            {
+              name: 'thumbnailUrl',
+              type: 'url',
+            },
+            {
+              name: 'image',
+              type: 'image',
+              options: {
+                hotspot: true,
+              },
+            },
+            {
+              name: 'sku',
+              type: 'string',
+            },
+          ],
+        },
+      ],
     },
   ],
 
   preview: {
     select: {
       title: 'title',
-      author: 'author.name',
       media: 'image',
     },
     prepare(selection) {
-      const {author, media, title} = selection
-      return Object.assign({}, selection, {
-        title,
-        subtitle: author && `by ${author}`,
-        media,
-      })
+      return {
+        ...selection,
+      }
     },
   },
 })
