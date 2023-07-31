@@ -18,20 +18,13 @@ export default defineType({
       },
     },
     {
-      name: 'description',
-      type: 'text',
-    },
-    {
       name: 'isActive',
       type: 'boolean',
       initialValue: false,
     },
     {
-      name: 'vendor',
-      type: 'string',
-      options: {
-        list: ['printful'],
-      },
+      name: 'description',
+      type: 'text',
     },
     {
       name: 'variants',
@@ -67,6 +60,13 @@ export default defineType({
           ],
         },
       ],
+    },
+    {
+      name: 'vendor',
+      type: 'string',
+      options: {
+        list: ['printful'],
+      },
     },
   ],
 
