@@ -22,10 +22,6 @@ export default defineType({
       type: 'text',
     },
     {
-      type: 'url',
-      name: 'thumbnailUrl',
-    },
-    {
       name: 'isActive',
       type: 'boolean',
       initialValue: false,
@@ -51,7 +47,7 @@ export default defineType({
             },
             {
               name: 'price',
-              type: 'number',
+              type: 'string',
             },
             {
               name: 'thumbnailUrl',
@@ -77,11 +73,12 @@ export default defineType({
   preview: {
     select: {
       title: 'title',
-      media: 'image',
+      variants: 'variants',
     },
-    prepare(selection) {
+    prepare({title, variants}) {
       return {
-        ...selection,
+        title,
+        media: variants[0].image,
       }
     },
   },
